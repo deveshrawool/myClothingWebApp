@@ -2,12 +2,12 @@ import { useContext, Fragment } from 'react';
 
 import ProductCard from '../../components/product-card/product-card.component';
 
-import { CategoriesContext } from '../../contexts/categories.context';
-
 import './shop.styles.scss';
+import { useSelector } from 'react-redux';
+import { selectCategories } from '../../store/categories/categories.selector';
 
 const Shop = () => {
-  const { categoryMap } = useContext(CategoriesContext);
+  const categoryMap  = useSelector(selectCategories);
 
   return (
     <Fragment>
